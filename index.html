@@ -27,7 +27,28 @@ button{
   background:#a94f6c;color:white;font-size:15px;
   box-shadow:0 8px 22px rgba(169,79,108,.25);margin-top:8px;
 }
-#video{display:none;margin-top:24px}
+#video{
+  display:none;
+  margin-top:24px;
+  opacity:0;
+  transform:translateY(50px);
+}
+
+.slide-up{
+  animation:slideUp 1s ease forwards;
+}
+
+@keyframes slideUp{
+  from{
+    opacity:0;
+    transform:translateY(50px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px}
 .heart{position:fixed;font-size:20px;animation:float 7s linear infinite;opacity:.55}
 @keyframes float{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}
@@ -66,9 +87,21 @@ iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px}
 
 <script>
 function openGift(){
-  document.getElementById('video').style.display='block';
-  document.querySelector('button').style.display='none';
-  document.getElementById('video').scrollIntoView({behavior:'smooth',block:'center'});
+  const video = document.getElementById('video');
+
+  video.style.display = 'block';
+
+  video.classList.add('slide-up');
+
+  document.querySelector('button').style.display = 'none';
+
+  setTimeout(() => {
+    video.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }, 200);
+}
 }
 </script>
 </body>
