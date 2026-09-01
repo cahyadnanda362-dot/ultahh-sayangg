@@ -1,114 +1,173 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Sayang ❤️</title>
 
-<title>Happy Birthday Sayangg ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e0, #f8d7da, #e6d9ff);
+      color: #333;
+      padding: 30px 20px;
+    }
 
-*{
-    box-sizing:border-box;
-}
+    .card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 25px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
 
-body{
-    margin:0;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    font-family:Georgia,"Times New Roman",serif;
-    background:linear-gradient(135deg,#fff1f5,#ffe4ec,#fff8fa);
-    color:#5b3440;
-}
+    .small {
+      font-size: 16px;
+      color: #777;
+    }
 
-.card{
-    width:min(92%,540px);
-    padding:42px 28px;
-    text-align:center;
-    background:rgba(255,255,255,.9);
-    border-radius:28px;
-    box-shadow:0 18px 60px rgba(120,60,80,.18);
-}
+    h1 {
+      margin-top: 15px;
+      font-size: 30px;
+    }
 
-.small{
-    font-family:Arial,sans-serif;
-    letter-spacing:3px;
-    font-size:12px;
-    text-transform:uppercase;
-    opacity:.65;
-}
+    .note {
+      line-height: 1.7;
+      font-size: 17px;
+      margin-top: 20px;
+    }
 
-h1{
-    font-size:39px;
-    line-height:1.2;
-    margin:12px 0 22px;
-    color:#8d3f59;
-}
+    button {
+      margin-top: 25px;
+      border: none;
+      padding: 15px 28px;
+      font-size: 17px;
+      border-radius: 30px;
+      cursor: pointer;
+      background: #ff5c8a;
+      color: white;
+    }
 
-.message{
-    font-family:Arial,sans-serif;
-    font-size:15px;
-    line-height:1.85;
-    text-align:left;
-}
+    /* VIDEO AWALNYA TERSEMBUNYI */
+    #video {
+      display: none;
+      max-width: 600px;
+      margin: 30px auto 0;
+      opacity: 0;
+      transform: translateY(50px);
+    }
 
-.note{
-    font-family:"Brush Script MT",cursive;
-    font-size:24px;
-    text-align:center;
-    margin:10px 0 22px;
-}
+    /* VIDEO MUNCUL DENGAN SLIDE KE ATAS */
+    #video.show {
+      display: block;
+      animation: slideVideo 1s ease forwards;
+    }
 
-button{
-    border:0;
-    padding:14px 27px;
-    border-radius:999px;
-    cursor:pointer;
-    background:#a94f6c;
-    color:white;
-    font-size:15px;
-    box-shadow:0 8px 22px rgba(169,79,108,.25);
-    margin-top:8px;
-}
+    @keyframes slideVideo {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
 
-#video{
-    margin-top:24px;
-    max-height:0;
-    opacity:0;
-    overflow:hidden;
-    transform:translateY(100px);
-    transition:max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-#video.show{
-    max-height:1000px;
-    opacity:1;
-    transform:translateY(0);
-}
+    video {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
 
-#video video{
-    width:100%;
-    display:block;
-    border-radius:16px;
-}
-
-</style>
+    .video-text {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 
+<body>
 
-<script>
-function openGift() {
-  const card = document.querySelector(".card");
-  const videoSection = document.getElementById("video");
+  <main class="card">
 
-  // Hilangkan isi awal
-  card.style.display = "none";
+    <div class="small">
+      a little surprise for you
+    </div>
 
-  // Munculkan video langsung
-  videoSection.style.display = "block";
-}
-</script>
+    <h1>
+      HAPPY BIRTHDAY SAYANGGG 🥳❤️
+    </h1>
+
+    <p class="note">
+      buat Sayang ❤️
+    </p>
+
+    <p class="note">
+      semoga semua hal baik selalu datang ke kamu,
+      dan semoga aku masih boleh ikut ada sesuatu buat kamu.
+      ngga seberapa sii, tapi aku bikinnya khusus buat kamu.
+    </p>
+
+    <p class="note">
+      <b>Jangan langsung pergi yaa, coba buka dulu 👀❤️</b>
+    </p>
+
+    <button onclick="openGift()">
+      Buka sekarang ❤️
+    </button>
+
+  </main>
+
+
+  <!-- BAGIAN VIDEO -->
+  <section id="video">
+
+    <p class="video-text">
+      <b>ini buat kamu ❤️</b>
+    </p>
+
+    <video controls>
+      <source
+        src="copy_920CD2C6-8A93-46C2-9D0C-8E420ACFF68F.mp4"
+        type="video/mp4"
+      >
+      Browser kamu tidak mendukung video.
+    </video>
+
+  </section>
+
+
+  <script>
+
+    function openGift() {
+
+      const video = document.getElementById("video");
+
+      video.classList.add("show");
+
+      setTimeout(() => {
+        video.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 100);
+
+    }
+
+  </script>
+
+</body>
+</html>
