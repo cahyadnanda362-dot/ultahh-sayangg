@@ -75,33 +75,21 @@ button{
     margin-top:8px;
 }
 
-/* VIDEO AWALNYA DISEMBUNYIKAN */
 #video{
-    display:none;
     margin-top:24px;
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    transform:translateY(100px);
+    transition:max-height 1.5s ease, opacity 1.5s ease, transform 1.5s ease;
 }
 
-/* VIDEO MUNCUL DENGAN EFEK SLIDE */
 #video.show{
-    display:block;
-    animation:slideVideo 1.5s ease-out forwards;
+    max-height:1000px;
+    opacity:1;
+    transform:translateY(0);
 }
 
-@keyframes slideVideo{
-
-    from{
-        opacity:0;
-        transform:translateY(100px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
-}
-
-/* UKURAN VIDEO */
 #video video{
     width:100%;
     display:block;
