@@ -100,103 +100,15 @@ button{
 </head>
 
 
-<body>
-
-<main class="card">
-
-    <div class="small">
-        a little surprise for you
-    </div>
-
-    <h1>
-        HAPPY BIRTHDAY SAYANGGG🥳❤️
-    </h1>
-
-    <p class="note">
-        buat Sayangg ❤️
-    </p>
-
-
-    <div class="message">
-
-        semogaa semuaa hall baik selaluu datangg ke kamuu, dan semogaa akuu masii bolee terus nemenin kamuu di banyakk ulangg tahun berikutnyaa. 🥺❤️
-
-        <br><br>
-
-        akuu adaa sesuatuu buat kamuu. nggaa seberapaa sii, tapi akuu bikinnyaa khususs buatt kamuu ❤️
-
-    </div>
-
-
-    <p class="message" style="text-align:center;margin-top:22px">
-
-        <b>
-            jangan langsung pergi yaa, coba buka duluu 👀❤️
-        </b>
-
-    </p>
-
-
-    <button id="openButton" onclick="openGift()">
-
-        Buka sekarangg ❤️
-
-    </button>
-
-
-
-    <!-- BAGIAN VIDEO -->
-
-    <section id="video">
-  <p class="message" style="text-align:center">
-    <b>ini buat kamu ❤️</b>
-  </p>
-
-  <video controls>
-    <source src="copy_920CD2C6-8A93-46C2-9D0C-8E420ACFF68F.mp4" type="video/mp4">
-  </video>
-</section>
-
-</main>
-
-
-
 <script>
+function openGift() {
+  const card = document.querySelector(".card");
+  const videoSection = document.getElementById("video");
 
-function openGift(){
+  // Hilangkan isi awal
+  card.style.display = "none";
 
-    const videoSection = document.getElementById("video");
-
-    const button = document.getElementById("openButton");
-
-
-    /* TAMBAHKAN ANIMASI */
-
-    videoSection.classList.add("show");
-
-
-    /* HILANGKAN TOMBOL */
-
-    button.style.display = "none";
-
-
-    /* SETELAH SEDIKIT JEDA, SCROLL KE VIDEO */
-
-    setTimeout(function(){
-
-        videoSection.scrollIntoView({
-
-            behavior:"smooth",
-            block:"center"
-
-        });
-
-    },500);
-
+  // Munculkan video langsung
+  videoSection.style.display = "block";
 }
-
 </script>
-
-
-</body>
-</html>
