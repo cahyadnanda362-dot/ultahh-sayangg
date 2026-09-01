@@ -39,24 +39,22 @@ button{
         transform 1s ease;
 }
 
-#video.show{
-    max-height:1000px;
-    opacity:1;
-    transform:translateY(0);
+#video{
+    display:none;
+    margin-top:24px;
+    opacity:0;
+    transform:translateY(150px);
 }
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+#video.show{
+    display:block;
+    animation:slideUp 2.5s ease-out forwards;
 }
+
+@keyframes slideUp{
     from{
         opacity:0;
-        transform:translateY(50px);
+        transform:translateY(150px);
     }
 
     to{
