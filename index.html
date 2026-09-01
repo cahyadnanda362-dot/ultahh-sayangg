@@ -28,16 +28,22 @@ button{
   box-shadow:0 8px 22px rgba(169,79,108,.25);margin-top:8px;
 }
 #video{
-    display:none;
     margin-top:24px;
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(80px);
+    transition:
+        max-height 1s ease,
+        opacity 1s ease,
+        transform 1s ease;
 }
 
 #video.show{
-    display:block;
-    animation:slideUp 1s ease forwards;
+    max-height:1000px;
+    opacity:1;
+    transform:translateY(0);
 }
-
-@keyframes slideUp{
     from{
         opacity:0;
         transform:translateY(50px);
@@ -107,7 +113,7 @@ function openGift(){
             behavior:'smooth',
             block:'center'
         });
-    }, 200);
+    }, 400);
 }
 </script>
 </body>
