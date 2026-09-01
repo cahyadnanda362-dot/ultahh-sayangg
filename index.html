@@ -101,20 +101,32 @@ iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:16px}
 </main>
 
 <script>
+
 function openGift(){
-    const video = document.getElementById('video');
 
-    video.classList.add('show');
+  const video = document.getElementById('video');
 
-    document.querySelector('button').style.display = 'none';
+  video.style.display = 'block';
 
-    setTimeout(() => {
-        video.scrollIntoView({
-            behavior:'smooth',
-            block:'center'
-        });
-    }, 400);
+  video.classList.remove('slide-up');
+
+  void video.offsetWidth;
+
+  setTimeout(() => {
+    video.classList.add('slide-up');
+  }, 100);
+
+  document.querySelector('button').style.display = 'none';
+
+  setTimeout(() => {
+    video.scrollIntoView({
+      behavior:'smooth',
+      block:'center'
+    });
+  }, 200);
+
 }
+</script>
 </script>
 </body>
 </html>
